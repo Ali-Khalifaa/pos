@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\UserController;
+use App\Http\Controllers\Dashboard\CategoryController;
+use App\Http\Controllers\Dashboard\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,14 +21,27 @@ Route::group(
         'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
     ], function(){
         
-        Route::prefix('dashboard')->name('dashboard.')->group(function (){
+        Route::prefix('dashboard')->name('dashboard.')->middleware(['auth'])->group(function (){
 
 
             Route::get('index',[DashboardController::class,'index'])->name('index');
+
+            // categories routes
+            Route::resource('categories', 'CategoryController')->except(['show']);
+
+            // product routes
+            Route::resource('products', 'ProductController')->except(['show']);
+
+            // user routes
+            Route::resource('users', 'UserController')->except(['show']);
+
             
-            });
+
+        });
             
         
     });
+    
+
 
 
