@@ -54,7 +54,9 @@ return[
     'profit_percent'=>'نسبة المكسب',
     'stock'=>'المخزن',
 
-    
+    'clients'=>'العملاء',
+    'phone'=>'رقم الهاتف',
+    'address'=>'العنوان',
 
 
     'ar' => [

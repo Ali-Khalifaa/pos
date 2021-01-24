@@ -5,6 +5,7 @@ use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\UserController;
 use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\Dashboard\ProductController;
+use App\Http\Controllers\Dashboard\ClientController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,6 +32,9 @@ Route::group(
 
             // product routes
             Route::resource('products', 'ProductController')->except(['show']);
+
+            // client routes
+            Route::resource('clients', 'ClientController')->except(['show']);
 
             // user routes
             Route::resource('users', 'UserController')->except(['show']);
