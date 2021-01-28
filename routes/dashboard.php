@@ -6,6 +6,9 @@ use App\Http\Controllers\Dashboard\UserController;
 use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\Dashboard\ProductController;
 use App\Http\Controllers\Dashboard\ClientController;
+use App\Http\Controllers\Dashboard\Client\OrderController;
+use App\Http\Controllers\Dashboard\OrdersController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,10 +38,14 @@ Route::group(
 
             // client routes
             Route::resource('clients', 'ClientController')->except(['show']);
+            Route::resource('clients.order', 'Client\OrderController')->except(['show']);
 
+            // order routes
+            Route::resource('orders', 'OrdersController');
+            Route::get('/orders/{order}/products', 'OrdersController@products')->name('orders.products');
+            
             // user routes
             Route::resource('users', 'UserController')->except(['show']);
-
             
 
         });

@@ -48,7 +48,8 @@
                                 <th>#</th>
                                 <th>@lang('site.name')</th>
                                 <th>@lang('site.phone')</th>
-                                <th>@lang('site.address')</th> 
+                                <th>@lang('site.address')</th>
+                                <th>@lang('site.add_order')</th> 
                                 <th>@lang('site.action')</th>
                             </tr>
                             <tbody>
@@ -57,8 +58,19 @@
                                         <td>{{ $index + 1}}</td>
                                         <td>{{$client->name}}</td>
                                         {{-- <td>{{ implode( '-',array_filter($client->phone))}}</td> --}}
-                                        <td>{{ implode( '-',$client->phone)}}</td>
+                                        <td>{{ is_array($client->phone) ? implode( '-',$client->phone) : $client->phone}}</td>
                                         <td>{{$client->address}}</td>
+                                        <td>
+                                            @if (auth()->user()->hasPermission('orders_create'))
+
+                                            <a href="{{route('dashboard.clients.order.create',$client->id)}}" class="btn btn-primary btn-sm">@lang('site.add_order')</a>
+
+                                            @else
+
+                                            <a href="#" class="btn btn-primary btn-sm disabled">@lang('site.add_order')</a>
+                                                
+                                            @endif
+                                        </td>
                                         <td>
 
                                             @if (auth()->user()->hasPermission('clients_update'))

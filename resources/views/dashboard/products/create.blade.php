@@ -64,12 +64,12 @@
 
                     <div class="form-group">
                         <label>@lang('site.purchase_price')</label>
-                        <input type="number" name="purchase_price" class="form-control" value="{{ old('purchase_price') }}">
+                        <input type="number" name="purchase_price" step="0.01" class="form-control" value="{{ old('purchase_price') }}">
                     </div>
 
                     <div class="form-group">
                         <label>@lang('site.sale_price')</label>
-                        <input type="number" name="sale_price" class="form-control" value="{{ old('sale_price') }}">
+                        <input type="number" name="sale_price" step="0.01" class="form-control" value="{{ old('sale_price') }}">
                     </div>
 
                     <div class="form-group">

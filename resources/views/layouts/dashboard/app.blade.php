@@ -80,7 +80,7 @@
     {{--html in  ie--}}
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-
+    
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 
@@ -308,19 +308,19 @@
         });//end of delete
 
         // image preview
-        $(".image").change(function () {
-        
-            if (this.files && this.files[0]) {
-                var reader = new FileReader();
-        
-                reader.onload = function (e) {
-                    $('.image-preview').attr('src', e.target.result);
-                }
-        
-                reader.readAsDataURL(this.files[0]);
-            }
-        
-        });
+        // $(".image").change(function () {
+
+        //     if (this.files && this.files[0]) {
+        //         var reader = new FileReader();
+
+        //         reader.onload = function (e) {
+        //             $('.image-preview').attr('src', e.target.result);
+        //         }
+
+        //         reader.readAsDataURL(this.files[0]);
+        //     }
+
+        // });
 
         CKEDITOR.config.language =  "{{ app()->getLocale() }}";
 

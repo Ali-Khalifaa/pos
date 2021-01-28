@@ -4,6 +4,7 @@ return[
     'dashboard'=>'الرئيسيه',
 
     'no_data_found'=>'للأسف لا يوجد اى سجلات',
+    'no_records'=>'للأسف لا يوجد اى سجلات',
     
     
     'edit'=>'تعديل',
@@ -49,15 +50,28 @@ return[
     'category'=>'القسم',
 
     'products'=>'المنتجات',
+    'product'=>'المنتج',
+    'quantity'=>'الكمية',
+    'total'=>'المجموع',
     'purchase_price'=>'سعر الشراء',
+    'price'=>'السعر',
     'sale_price'=>'سعر البيع',
     'profit_percent'=>'نسبة المكسب',
     'stock'=>'المخزن',
+    'show_products'=>'عرض المنتجات',
+    'created_at'=>'تم اضافته',
 
     'clients'=>'العملاء',
+    'client_name'=>'أسم العميل',
     'phone'=>'رقم الهاتف',
     'address'=>'العنوان',
-
+    'orders'=>'الطلبات',
+    'add_order'=>'أضف طلب',
+    'edit_order'=>'تعديل طلب',
+    'show'=>'عرض',
+    'loading'=>'جارى التحميل',
+    'print'=>'طباعه',
+    'previous_orders'=>'الطلبات السابقه',
 
     'ar' => [
         
